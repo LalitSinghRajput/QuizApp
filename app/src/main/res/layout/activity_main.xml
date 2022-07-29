@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:text="Select Category"
         android:textColor="@color/white"
@@ -28,7 +29,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/categoryNextBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,7 @@
                         android:src="@drawable/chemist" />
 
                     <TextView
-                        android:id="@+id/science"
+                        android:id="@+id/science_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -98,6 +99,7 @@
                         android:src="@drawable/math" />
 
                     <TextView
+                        android:id="@+id/math_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -131,6 +133,7 @@
                         android:src="@drawable/sports" />
 
                     <TextView
+                        android:id="@+id/sports_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -165,6 +168,7 @@
                         android:src="@drawable/animal" />
 
                     <TextView
+                        android:id="@+id/animals_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -198,6 +202,7 @@
                         android:src="@drawable/music" />
 
                     <TextView
+                        android:id="@+id/music_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -232,6 +237,7 @@
                         android:src="@drawable/geography" />
 
                     <TextView
+                        android:id="@+id/geography_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -280,7 +286,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/categoryNextBtn"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"

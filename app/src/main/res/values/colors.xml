@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_color">#1A4AF3</color>
     <color name="card_background">#FAFAFC</color>
+    <color name="difficulty_circle_disable">#e6e6e6</color>
+    <color name="difficulty_circle_enable">#1A4AF3</color>
+    <color name="difficulty_card_disable">#f2f2f2</color>
+    <color name="difficulty_card_enable">#ffff</color>
 </resources>
