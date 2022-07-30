@@ -51,7 +51,7 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
+                android:id="@+id/question_card"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/question"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -78,7 +78,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
+                android:id="@+id/option1_card"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -88,10 +88,10 @@
                 app:cardCornerRadius="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                app:layout_constraintTop_toBottomOf="@+id/question_card">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/option1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -104,7 +104,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView5"
+                android:id="@+id/option2_card"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -113,10 +113,10 @@
                 android:backgroundTint="@color/correct_option"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView4">
+                app:layout_constraintTop_toBottomOf="@+id/option1_card">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/option2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -129,7 +129,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView6"
+                android:id="@+id/option3_card"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -137,10 +137,10 @@
                 app:cardCornerRadius="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView5">
+                app:layout_constraintTop_toBottomOf="@+id/option2_card">
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/option3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -153,7 +153,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView7"
+                android:id="@+id/option4_card"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -164,10 +164,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView6">
+                app:layout_constraintTop_toBottomOf="@+id/option3_card">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/option4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
