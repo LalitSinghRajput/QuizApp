@@ -13,4 +13,6 @@
     <color name="difficulty_circle_enable">#1A4AF3</color>
     <color name="difficulty_card_disable">#f2f2f2</color>
     <color name="difficulty_card_enable">#ffff</color>
+    <color name="correct_option">#4BB543</color>
+    <color name="incorrect_option">#FC100D</color>
 </resources>

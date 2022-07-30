@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/custom_theme">
         <activity
+            android:name=".question_answer"
+            android:exported="false" />
+        <activity
             android:name=".difficulty_mode_selection"
             android:exported="false" />
         <activity

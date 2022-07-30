@@ -2,6 +2,7 @@ package com.example.quizapp
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -41,11 +42,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // for removing buttons
         window.decorView.apply {
             systemUiVisibility =
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
 
+        resetAll()
 
         for (key in categoryCard.keys) {
             val currCategoryCard = findViewById<CardView>(key)
@@ -53,11 +56,16 @@ class MainActivity : AppCompatActivity() {
                 category = categoryCard[key].toString()
 
                 // reset
-                resetTitle()
+//                resetTitle()
+                resetAll()
 
                 val title = categoryTitle[category]!!.toInt()
                 val currTitle = findViewById<TextView>(title)
                 currTitle.setTypeface(null, Typeface.BOLD);
+
+                val card=findViewById<CardView>(key)
+                card.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.difficulty_card_enable)))
+                card.cardElevation=30.0f
             }
         }
 
@@ -79,6 +87,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun resetTitle() {
+        for (key in categoryTitle.keys) {
+            val title = findViewById<TextView>(categoryTitle[key]!!.toInt())
+            title.setTypeface(null, Typeface.NORMAL)
+        }
+    }
+    private fun resetAll(){
+        // reset card
+        for(key in categoryCard.keys){
+            val card=findViewById<CardView>(key)
+            card.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.difficulty_card_disable)))
+            card.cardElevation=10.0f
+        }
+        // resset title
         for (key in categoryTitle.keys) {
             val title = findViewById<TextView>(categoryTitle[key]!!.toInt())
             title.setTypeface(null, Typeface.NORMAL)

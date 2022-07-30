@@ -288,9 +288,9 @@
     <Button
         android:id="@+id/categoryNextBtn"
         android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/bg_color"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_btn"
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
