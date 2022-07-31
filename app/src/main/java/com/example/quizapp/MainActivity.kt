@@ -1,17 +1,14 @@
 package com.example.quizapp
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.math.log
 import android.widget.TextView
 
 
@@ -21,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val categoryCard =
         mapOf(
             R.id.science_card to "science",
-            R.id.math_card to "math",
+            R.id.computer_card to "computer",
             R.id.sports_card to "sports",
             R.id.animals_card to "animals",
             R.id.music_card to "music",
@@ -30,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private val categoryTitle = mapOf(
         "science" to R.id.science_title,
-        "math" to R.id.math_title,
+        "computer" to R.id.computer_title,
         "sports" to R.id.sports_title,
         "animals" to R.id.animals_title,
         "music" to R.id.music_title,
@@ -63,9 +60,9 @@ class MainActivity : AppCompatActivity() {
                 val currTitle = findViewById<TextView>(title)
                 currTitle.setTypeface(null, Typeface.BOLD);
 
-                val card=findViewById<CardView>(key)
+                val card = findViewById<CardView>(key)
                 card.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.difficulty_card_enable)))
-                card.cardElevation=30.0f
+                card.cardElevation = 30.0f
             }
         }
 
@@ -83,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, difficulty_mode_selection::class.java)
                 startActivity(intent)
             }
+
         }
     }
 
@@ -92,12 +90,13 @@ class MainActivity : AppCompatActivity() {
             title.setTypeface(null, Typeface.NORMAL)
         }
     }
-    private fun resetAll(){
+
+    private fun resetAll() {
         // reset card
-        for(key in categoryCard.keys){
-            val card=findViewById<CardView>(key)
+        for (key in categoryCard.keys) {
+            val card = findViewById<CardView>(key)
             card.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.difficulty_card_disable)))
-            card.cardElevation=10.0f
+            card.cardElevation = 10.0f
         }
         // resset title
         for (key in categoryTitle.keys) {

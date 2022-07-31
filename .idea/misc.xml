@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/drawable/custom_btn.xml" value="0.163671875" />
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/drawable/difficult_circle.xml" value="0.163671875" />
+        <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/drawable/splash_screen_bg.xml" value="0.163671875" />
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/layout/activity_difficulty_mode_selection.xml" value="0.1484375" />
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.1484375" />
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/layout/activity_question_answer.xml" value="0.1484375" />
+        <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1484375" />
         <entry key="..\:/Learning/Android_Projects/QuizApp/app/src/main/res/layout/view.xml" value="0.10400000000000001" />
         <entry key="..\:/Learning/kotlin_projcect_YT/QuizApp2/app/src/main/res/drawable/button_style.xml" value="0.166796875" />
         <entry key="..\:/Learning/kotlin_projcect_YT/QuizApp2/app/src/main/res/layout/activity_main.xml" value="0.1515625" />

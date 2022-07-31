@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_question_answer.*
 import org.json.JSONArray
 import org.json.JSONObject
+import java.net.URLDecoder
 import java.util.*
 
 class question_answer : AppCompatActivity() {
@@ -27,6 +28,16 @@ class question_answer : AppCompatActivity() {
     private val options: List<Int> = listOf(R.id.option1, R.id.option2, R.id.option3, R.id.option4)
     private var ind = 0
 
+    private val categoryId = mapOf(
+        "science" to 17,
+        "computer" to 18,
+        "sports" to 21,
+        "animals" to 27,
+        "music" to 12,
+        "geography" to 22,
+    )
+    lateinit var category: String
+    lateinit var difficutly: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_answer)
@@ -39,8 +50,8 @@ class question_answer : AppCompatActivity() {
 
 
         val prefs = getSharedPreferences("quiz", MODE_PRIVATE)
-        val category = prefs.getString("category", "No category")
-        val difficutly = prefs.getString("difficulty", "No difficulty")
+        category = prefs.getString("category", "No category").toString()
+        difficutly = prefs.getString("difficulty", "No difficulty").toString()
 
         resetAllFeilds()
         resetOptionsCard()
@@ -51,7 +62,9 @@ class question_answer : AppCompatActivity() {
     // Functions
     private fun getJsonData() {
         val queue = Volley.newRequestQueue(this)
-        val URL = "https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple"
+//        val categID = categoryId[category]
+        val URL =
+            "https://opentdb.com/api.php?amount=10&category=${categoryId[category]}&difficulty=${difficutly}&type=multiple&encode=url3986"
 
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, URL, null,
@@ -60,7 +73,7 @@ class question_answer : AppCompatActivity() {
 
                 var result = response.getJSONArray("results")
                 setData(result)
-                Log.d("my_quiz", "res: " + result)
+//                Log.d("my_quiz", "res: " + result)
 //
             },
             Response.ErrorListener {
@@ -72,15 +85,22 @@ class question_answer : AppCompatActivity() {
 
     private fun setValues(response: JSONObject) {
         resetOptionsCard()
-        question.text = response.getString("question").toString()
+        var encodedQues = response.getString("question").toString()
+        val ques: String = URLDecoder.decode(encodedQues, "UTF-8")
+        Log.d("my_quiz", "Encoded String: " + encodedQues)
+        Log.d("my_quiz", "Decoded String: " + ques)
 
-        val correctAns = response.getString("correct_answer").toString()
+        question.setText(ques)
+
+        val encodedCorrectAns = response.getString("correct_answer").toString()
+        val correctAns: String = URLDecoder.decode(encodedCorrectAns, "UTF-8")
         val incArr = response.getJSONArray("incorrect_answers")
 
         var optionsArr = mutableListOf<String>()
 
         for (i in 0 until incArr.length()) {
-            val item = incArr[i].toString()
+            val encodedItem = incArr[i].toString()
+            val item: String = URLDecoder.decode(encodedItem, "UTF-8")
             optionsArr.add(item)
         }
         optionsArr.add(correctAns)
@@ -89,13 +109,13 @@ class question_answer : AppCompatActivity() {
 //        Log.d("my_quiz", "incArray: " + incArray)
         for (ind in options.indices) {
             val option = findViewById<TextView>(options[ind])
-            option.setText(optionsArr[ind].toString())
+            option.setText(optionsArr[ind])
         }
     }
 
     private fun setData(response: JSONArray) {
         val data = response
-        Log.d("my_quiz", "res:106 " + data)
+//        Log.d("my_quiz", "res:106 " + data)
         var ansGiven = false
 
         // first
@@ -121,7 +141,8 @@ class question_answer : AppCompatActivity() {
 //                Toast.makeText(this, "You clicked on: " + option.text, Toast.LENGTH_SHORT).show()
 //                Toast.makeText(this, "correct: " + correctAns, Toast.LENGTH_LONG).show()
                 val inputAns = option.text
-                val correctAns = (data[ind] as JSONObject).getString("correct_answer")
+                val encodedCorrectAns = (data[ind] as JSONObject).getString("correct_answer")
+                val correctAns: String = URLDecoder.decode(encodedCorrectAns, "UTF-8")
 
                 if (ansGiven == false) {
                     if (inputAns == correctAns) {
