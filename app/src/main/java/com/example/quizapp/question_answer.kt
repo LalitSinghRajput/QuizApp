@@ -2,6 +2,7 @@ package com.example.quizapp
 
 import android.content.res.ColorStateList
 import android.graphics.Typeface
+import android.media.MediaPlayer;
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -44,7 +45,6 @@ class question_answer : AppCompatActivity() {
         resetAllFeilds()
         resetOptionsCard()
         getJsonData()
-
 
     }
 
@@ -133,6 +133,8 @@ class question_answer : AppCompatActivity() {
                                 )
                             )
                         )
+                        val mediaPlayer = MediaPlayer.create(this, R.raw.correct_ans_sound)
+                        mediaPlayer.start()
                     } else {
 //                        Toast.makeText(this, "Wrong Ans", Toast.LENGTH_LONG).show()
                         option_card.setBackgroundTintList(
@@ -157,8 +159,11 @@ class question_answer : AppCompatActivity() {
                                 )
                                 curr.setTextColor(ContextCompat.getColor(this, R.color.white))
                                 curr.setTypeface(null, Typeface.BOLD)
+
                             }
                         }
+                        val mediaPlayer = MediaPlayer.create(this, R.raw.wrong_ans_sound)
+                        mediaPlayer.start()
                     }
                     ansGiven = true
                     option.setTextColor(ContextCompat.getColor(this, R.color.white))
