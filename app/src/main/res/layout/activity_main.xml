@@ -17,6 +17,7 @@
         android:text="Select Category"
         android:textColor="@color/white"
         android:textSize="25sp"
+        android:fontFamily="@font/roboto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +59,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/chemist" />
 
@@ -67,9 +69,9 @@
                         android:id="@+id/science_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
                         android:text="Science"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -93,8 +95,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:src="@drawable/computer" />
 
@@ -102,9 +105,9 @@
                         android:id="@+id/computer_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
                         android:text="Computer"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -127,8 +130,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:src="@drawable/sports" />
 
@@ -136,9 +140,9 @@
                         android:id="@+id/sports_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
                         android:text="Sports"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -162,8 +166,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:src="@drawable/animal" />
 
@@ -171,9 +176,9 @@
                         android:id="@+id/animals_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
                         android:text="Animals"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -196,8 +201,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:src="@drawable/music" />
 
@@ -205,8 +211,8 @@
                         android:id="@+id/music_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
+                        android:fontFamily="@font/roboto"
                         android:text="Music"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -231,8 +237,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="5dp"
                         android:layout_gravity="center"
                         android:src="@drawable/geography" />
 
@@ -240,17 +247,18 @@
                         android:id="@+id/geography_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:gravity="center"
                         android:text="Geography"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/book_card"
                 android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_height="160dp"
                 android:layout_margin="20dp"
                 app:cardBackgroundColor="@color/card_background"
                 app:cardCornerRadius="10dp"
@@ -264,21 +272,212 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/chemist" />
+                        android:layout_margin="5dp"
+                        android:src="@drawable/book" />
 
                     <TextView
+                        android:id="@+id/book_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center"
-                        android:text="Science"
+                        android:text="Books"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vehicle_card"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/book_card"
+                app:layout_constraintTop_toBottomOf="@+id/geography_card">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/vehicle" />
+
+                    <TextView
+                        android:id="@+id/vehicle_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Vehicles"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/videoGame_card"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/book_card">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/video_game" />
+
+                    <TextView
+                        android:id="@+id/vedioGame_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="Video Games"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/history_card"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/videoGame_card"
+                app:layout_constraintTop_toBottomOf="@+id/vehicle_card">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/history" />
+
+                    <TextView
+                        android:id="@+id/history_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="History"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartoon_card"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/videoGame_card">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/cartoon" />
+
+                    <TextView
+                        android:id="@+id/cartoon_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="Cartoon"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/boardGame_card"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cartoon_card"
+                app:layout_constraintTop_toBottomOf="@+id/history_card">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/board_game" />
+
+                    <TextView
+                        android:id="@+id/boardGame_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="Board Games"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -294,6 +493,7 @@
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:fontFamily="@font/roboto"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

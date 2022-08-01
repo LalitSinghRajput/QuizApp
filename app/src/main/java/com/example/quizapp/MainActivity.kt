@@ -6,10 +6,18 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
+import androidx.core.view.marginLeft
+import android.os.Build
+
+import android.graphics.drawable.GradientDrawable
+
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +31,14 @@ class MainActivity : AppCompatActivity() {
             R.id.animals_card to "animals",
             R.id.music_card to "music",
             R.id.geography_card to "geography",
-        );
+            R.id.book_card to "book",
+            R.id.vehicle_card to "vehicle",
+            R.id.videoGame_card to "videoGame",
+            R.id.history_card to "history",
+            R.id.cartoon_card to "cartoon",
+            R.id.boardGame_card to "boardGame",
+
+            );
 
     private val categoryTitle = mapOf(
         "science" to R.id.science_title,
@@ -32,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         "animals" to R.id.animals_title,
         "music" to R.id.music_title,
         "geography" to R.id.geography_title,
+        "book" to R.id.book_title,
+        "vehicle" to R.id.vehicle_title,
+        "videoGame" to R.id.vedioGame_title,
+        "history" to R.id.history_title,
+        "cartoon" to R.id.cartoon_title,
+        "boardGame" to R.id.boardGame_title,
     )
 
 
@@ -97,6 +118,8 @@ class MainActivity : AppCompatActivity() {
             val card = findViewById<CardView>(key)
             card.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.difficulty_card_disable)))
             card.cardElevation = 10.0f
+
+
         }
         // resset title
         for (key in categoryTitle.keys) {

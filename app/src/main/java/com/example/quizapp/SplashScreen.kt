@@ -30,10 +30,14 @@ class SplashScreen : AppCompatActivity() {
 
             rotationYBy(180f)
             rotation(360f)
+            scaleX(1.1f)
+            scaleY(1.1f)
 
         }.withEndAction {
             logo.animate().apply {
                 duration = 1000
+                scaleX(0.9f)
+                scaleY(0.9f)
             }.start()
         }
 

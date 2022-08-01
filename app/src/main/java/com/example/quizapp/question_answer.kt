@@ -27,6 +27,10 @@ class question_answer : AppCompatActivity() {
         listOf(R.id.option1_card, R.id.option2_card, R.id.option3_card, R.id.option4_card)
     private val options: List<Int> = listOf(R.id.option1, R.id.option2, R.id.option3, R.id.option4)
     private var ind = 0
+    private var attempted = 0
+    private var notAttempted = 0
+    private var noOfCorrectAns = 0
+    private var noOfInCorrectAns = 0
 
     private val categoryId = mapOf(
         "science" to 17,
@@ -35,6 +39,12 @@ class question_answer : AppCompatActivity() {
         "animals" to 27,
         "music" to 12,
         "geography" to 22,
+        "book" to 10,
+        "vehicle" to 28,
+        "videoGame" to 15,
+        "history" to 23,
+        "cartoon" to 32,
+        "boardGame" to 16,
     )
     lateinit var category: String
     lateinit var difficutly: String
@@ -129,8 +139,14 @@ class question_answer : AppCompatActivity() {
             if (ind < data!!.length()) {
                 questionNumber.setText((ind + 1).toString())
                 setValues(data!![ind] as JSONObject)
-            } else
-                Toast.makeText(this, "All Done", Toast.LENGTH_LONG).show()
+            } else {
+//                Toast.makeText(this, "All Done", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this,
+                    "Correct: $noOfCorrectAns\nIncorrect: $noOfInCorrectAns\nScore Card soon implementing",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
 
 
@@ -147,6 +163,7 @@ class question_answer : AppCompatActivity() {
                 if (ansGiven == false) {
                     if (inputAns == correctAns) {
 //                        Toast.makeText(this, "Correct Ans", Toast.LENGTH_LONG).show()
+                        noOfCorrectAns++
                         option_card.setBackgroundTintList(
                             ColorStateList.valueOf(
                                 resources.getColor(
@@ -158,6 +175,7 @@ class question_answer : AppCompatActivity() {
                         mediaPlayer.start()
                     } else {
 //                        Toast.makeText(this, "Wrong Ans", Toast.LENGTH_LONG).show()
+                        noOfInCorrectAns++
                         option_card.setBackgroundTintList(
                             ColorStateList.valueOf(
                                 resources.getColor(
@@ -213,6 +231,7 @@ class question_answer : AppCompatActivity() {
         for (id in options) {
             val option = findViewById<TextView>(id)
             option.setTextColor(ContextCompat.getColor(this, R.color.black))
+            option.setTypeface(null, Typeface.BOLD)
 
         }
     }
