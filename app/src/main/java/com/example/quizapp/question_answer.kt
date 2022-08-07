@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Typeface
 import android.media.MediaPlayer;
@@ -140,12 +141,15 @@ class question_answer : AppCompatActivity() {
                 questionNumber.setText((ind + 1).toString())
                 setValues(data!![ind] as JSONObject)
             } else {
-//                Toast.makeText(this, "All Done", Toast.LENGTH_LONG).show()
-                Toast.makeText(
-                    this,
-                    "Correct: $noOfCorrectAns\nIncorrect: $noOfInCorrectAns\nScore Card soon implementing",
-                    Toast.LENGTH_LONG
-                ).show()
+
+                val editor = getSharedPreferences("quiz", MODE_PRIVATE).edit()
+                editor.putInt("correctAns", noOfCorrectAns)
+                editor.putInt("inCorrectAns", noOfInCorrectAns)
+                editor.apply()
+
+                val intent = Intent(this, score::class.java)
+                startActivity(intent)
+                finish()
             }
         }
 

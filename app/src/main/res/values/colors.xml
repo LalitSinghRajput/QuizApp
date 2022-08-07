@@ -16,4 +16,5 @@
     <color name="difficulty_card_enable">#ffff</color>
     <color name="correct_option">#4BB543</color>
     <color name="incorrect_option">#FC100D</color>
+    <color name="play_btn">#ffa500</color>
 </resources>
